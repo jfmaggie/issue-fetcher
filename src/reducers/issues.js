@@ -18,7 +18,7 @@ const issues = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        issues: action.response.issues
+        issues: action.issues
       };
     case FETCH_ISSUES_FAILURE:
       return {

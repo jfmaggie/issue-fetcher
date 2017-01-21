@@ -1,8 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import IssuesList from '../components/IssuesList';
+import { fetchIssues } from '../actions';
 
 class Root extends React.Component {
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(fetchIssues('facebook', 'react'));
+  };
+
   render() {
     const { issues } = this.props;
 
@@ -20,15 +26,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-
-  };
-};
-
 const RootContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(Root);
 
 export default RootContainer;
