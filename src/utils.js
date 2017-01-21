@@ -1,6 +1,4 @@
-import { polyfill } from 'es6-promise';
-polyfill();
-import fetch from 'isomorphic-fetch';
+import 'whatwg-fetch';
 
 const defaultHeaders = {
   'Accept': 'application/json',
