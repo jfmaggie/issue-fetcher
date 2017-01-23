@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import RootContainer from './containers/RootContainer';
+import Root from './components/Root';
 import thunk from 'redux-thunk';
 import reducers from './reducers';
 
@@ -13,7 +13,7 @@ let store = createStore(
 
 render(
   <Provider store={store}>
-    <RootContainer />
+    <Root />
   </Provider>,
   document.getElementById('root')
 )

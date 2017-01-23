@@ -14,13 +14,17 @@ export function fetchIssues(owner, repo) {
       .then((response) => {
         dispatch({
           type: FETCH_ISSUES_SUCCESS,
-          issues: response
+          issues: response,
+          owner: owner,
+          repo: repo
         });
       })
       .catch((error) => {
         dispatch({
           type: FETCH_ISSUES_FAILURE,
-          error: error
+          error: error,
+          owner: owner,
+          repo: repo
         })
       });
   };
